@@ -15,10 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     // RETORNO DO BANCO
     $retorno = mysqli_query($link, $sql);
 
-    while($tbl = mysqli_fetch_array($retorno))
-    {
-        $contagem = $tbl[0];
-    }
+    // while($tbl = mysqli_fetch_array($retorno))
+    // {
+    //     $contagem = $tbl[0];
+    // }
+
+    $contagem = mysqli_fetch_array($retorno) [0];
 
     // VERIFICA SE NATAN EXISTE
     if($contagem == 1)
@@ -46,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     <div class="container-global">
         <form class="formulario" action="login.php" method="post">
-            <img src="img/logo.jfif" width=100px height=100px>
+            <img src="img/logo.png" width=100px height=100px>
             <label>LOGIN</label>
             <input type="text" name="txtlogin" required>
             <br>
