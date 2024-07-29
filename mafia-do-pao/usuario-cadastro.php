@@ -45,9 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 <body>
 
     <div class="container-global">
-        <a href="home.php" style="width: 50px; height: 50px; background-color: blue;">VOLTAR</a>
-        <form class="formulario" action="usuario-cadastro.php" method="post">
+        <a href="home.php" style="width: 50px; height: 50px; background-color: aliceblue;">VOLTAR</a>
 
+        <form class="formulario" action="usuario-cadastro.php" method="post">
             <label>LOGIN</label>
             <input type="text" name="txtlogin" placeholder="Digite seu login" required>
             <br>
