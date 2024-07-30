@@ -44,8 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <body>
 
+    <a href="backoffice.php"><img src="icons/Navigation-left-01-256.png" width="25" height="25"></a>
+
     <div class="container-global">
-        <a href="home.php" style="width: 50px; height: 50px; background-color: aliceblue;">VOLTAR</a>
 
         <form class="formulario" action="usuario-cadastro.php" method="post">
             <label>LOGIN</label>
@@ -57,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <label>EMAIL</label>
             <input type="email" name="txtemail" placeholder="Digite seu email" required>
             <br>
-            <input type="submit" value="CRIAR">
+            <input type="submit" value="CONFIRMAR">
         </form>
     </div>
 
