@@ -31,7 +31,7 @@ $nomeusuario = $_SESSION['nomeusuario'];
         </div>
   
         <!-- BOTÕES DE MENU -->
-         <div class="menu">
+        <div class="menu">
             <a href="usuario-cadastro.php"><span class="tooltiptext">Cadastro de Usuario</span>
                                             <img src="./icons/user-add.png"></a>
             <a href="usuario-lista.php"><span class="tooltiptext">Listar Usuarios</span>
@@ -47,7 +47,7 @@ $nomeusuario = $_SESSION['nomeusuario'];
             <a href="vendas.php"><span class="tooltiptext">Vendas</span>
                                             <img src="icons/shopping-cart-02.png"></a>
         
-         </div>
+        </div>
     </div>
     
 </body>

@@ -2,9 +2,9 @@
 
 include('conectadb.php');
 
-// CONSULTA USUARIOS CADASTRADOS
-$sql = "SELECT usu_login, usu_email, usu_status, usu_id
-        FROM tb_usuarios WHERE usu_status = '1'";
+// CONSULTA CLIENTES CADASTRADOS
+$sql = "SELECT cli_cpf, cli_nome, cli_email, cli_cel, cli_status, cli_id
+        FROM tb_clientes WHERE cli_status = '1'";
 $retorno = mysqli_query($link, $sql);
 $status = '1';
 
@@ -16,7 +16,7 @@ $status = '1';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
-    <title>LISTA DE USUARIOS</title>
+    <title>LISTA DE CLIENTES</title>
 </head>
 <body>
 
@@ -27,17 +27,18 @@ $status = '1';
         <form>
 
         </form>
-        <!-- LISTAR A TABELA DE USUARIOS -->
+        <!-- LISTAR A TABELA DE CLIENTES -->
         <table class="lista">
             <tr>
-                <th>LOGIN</th>
+                <th>NOME</th>
+                <th>CPF</th>
                 <th>EMAIL</th>
+                <th>TELEFONE</th>
                 <th>STATUS</th>
                 <th>ALTERAR</th>
             </tr>
 
-            <!-- O CHORO É LIVRE! CHOLA MAIS -->
-            <!-- BUSCAR NO BANCO DE DADOS DE TODOS OS USUARIOS -->
+            <!-- BUSCAR NO BANCO DE DADOS DE TODOS OS CLIENTES -->
              <?php
                 while($tbl = mysqli_fetch_array($retorno))
                 {

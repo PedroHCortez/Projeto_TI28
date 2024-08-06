@@ -5,6 +5,7 @@ include('conectadb.php');
 //Coleta valor ID na URL
 $id= $_GET['id'];
 $sql = "SELECT * FROM tb_usuarios WHERE usu_id = $id";
+
 $retorno = mysqli_query($link, $sql);
     while($tbl = mysqli_fetch_array($retorno))
     {
@@ -54,14 +55,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <input type="text" name="txtlogin" value="<?=$login?>" required>
             <br>
             <label>SENHA</label>
-            <input type="password" name="txtsenha" value="<?=$senha?>" required>
+            <input type="password" name="txtsenha" placeholder="Digite sua senha" value="<?=$senha?>" required>
             <br>
             <label>EMAIL</label>
-            <input type="email" name="txtemail" value="<?=$email?>" required>
-                         
+            <input type="email" name="txtemail" placeholder="Digite seu email" value="<?=$email?>" required>
+            
+            <!-- Ativo ou Inativo -->
             <input type="radio" name="status" value="1" <?=$status == '1'?"checkrd": ""?>>ATIVO
-            <br>
             <input type="radio" name="status" value="1" <?=$status == '0'?"checkrd": ""?>>INATIVO            
+            <br>
             <br>
             <input type="submit" value="CONFIRMAR">
         </form>
