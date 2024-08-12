@@ -1,6 +1,7 @@
 <?php
 
 include('conectadb.php');
+include('topo.php');
 
 // CONSULTA USUARIOS CADASTRADOS
 $sql = "SELECT usu_login, usu_email, usu_status, usu_id
@@ -19,8 +20,6 @@ $status = '1';
     <title>LISTA DE USUARIOS</title>
 </head>
 <body>
-
-    <a href="backoffice.php" class="btnsair"><img src="icons/Navigation-left-01-256.png" width="25" height="25"></a>
 
     <div class="container-listausuarios">
         <!-- FAZER DEPOIS DO ROLÊ -->

@@ -40,6 +40,14 @@ body{
 
 }
 
+.bullets{
+    display: flex;
+    flex-flow: row;
+    justify-items: center;
+    width: auto;
+    height: 100px;
+}
+
 /* CSS DO HOME */
 .topo{
     display: flex;

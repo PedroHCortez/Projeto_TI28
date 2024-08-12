@@ -1,6 +1,7 @@
 <?php
 
 include('conectadb.php');
+include('topo.php');
 
 //Coleta valor ID na URL
 $id= $_GET['id'];
@@ -36,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,8 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <title>ALTERAÇÃO DE USUÁRIO</title>
 </head>
 <body>
-
-    <a href="usuario-lista.php"><img src="icons/Navigation-left-01-256.png" width="25" height="25"></a>
 
     <div class="container-global">
 

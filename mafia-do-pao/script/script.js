@@ -1,3 +1,4 @@
+
 document.getElementById('telefone').addEventListener('input', function(event) {
     const input = event.target;
     let value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
@@ -10,7 +11,7 @@ document.getElementById('telefone').addEventListener('input', function(event) {
     }
 
     input.value = value;
-});    
+});  
 // FORMATO DO CPF
 
 function formatarCPF(input) {

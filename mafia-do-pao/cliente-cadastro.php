@@ -1,13 +1,14 @@
 <?php
 
 include("conectadb.php");
+include("topo.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $cpf = $_POST['cpf'];
     $nome = $_POST['txtnome'];
     $email = $_POST['txtemail'];
-    $telefone = $_POST['telefone'];
+    $telefone = $_POST['txtcel'];
 
     // VALIDA SE O CLIENTE QUE VAI SER CADASTRADO JÁ EXISTE
     $sql = "SELECT COUNT(cli_id) FROM tb_clientes
@@ -24,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         VALUES ('$cpf', '$nome', '$email', '$telefone', '1')";
         mysqli_query($link, $sql);
         echo"<script>window.alert('CLIENTE CADASTRADO COM SUCESSO');</script>";
-        echo"<script>window.location.href='login.php';</script>";
+        echo"<script>window.location.href='backoffice.php';</script>";
     }
     else if ($contagem >= 1)
     {
@@ -45,13 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <body>
 
-    <a href="backoffice.php"><img src="icons/Navigation-left-01-256.png" width="25" height="25"></a>
-
     <div class="container-global">
 
-        <form class="formulario" action="usuario-cadastro.php" method="post">
+        <form class="formulario" action="cliente-cadastro.php" method="post">
             <label>CPF</label>
-            <input type="text" id="cpf" placeholder="000.000.000-00" oninput="formatarCPF(this)">
+            <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" oninput="formatarCPF(this)" maxlength="15">
             <br>
             <label>NOME</label>
             <input type="text" name="txtnome" placeholder="Digite seu nome" required>
@@ -60,13 +59,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <input type="email" name="txtemail" placeholder="Digite seu email" required>
             <br>
             <label>TELEFONE</label>
-            <input type="text" id="telefone" placeholder="(00) 00000-0000" maxlength="15">
+            <input type="text" name="txtcel" id="telefone" placeholder="(00)00000-0000" maxlength="15">
             <br>
             <input type="submit" value="CONFIRMAR">
         </form>
     </div>
 
-    <script src="scripts/script.js"></script>
+    <script src="script/script.js"></script>
 
 </body>
 
