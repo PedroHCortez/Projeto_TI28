@@ -94,7 +94,7 @@ body{
     justify-content: center;
     align-items: center;
     color: black;
-    transition: transform .2s;
+    transition: transform .7s;
 }
 
 .menu a:hover {
@@ -128,8 +128,7 @@ body{
 
 
 /* AJUSTANDO TABELAS */
-.container-listausuarios {
-    margin-top: 60px;
+.container-listausuarios, .container-listaclientes{
     display: flex;
     flex-flow: column;
     align-content: center;
@@ -138,11 +137,14 @@ body{
 }
 
 .lista{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
     background-color: #0092ba;
     padding: 20px;
     border-radius: 10px;
     border-collapse: collapse;
-    width: 100%;
+    width: auto;
     height: auto;
     
 }
@@ -150,6 +152,8 @@ td, tr, th{
     color: #ffffff;
     border: #fff 2px solid;
     font-size: 25px;
+    padding: 15px;
+    text-align: center;
 }
 
 .btnsair{
@@ -160,3 +164,19 @@ td, tr, th{
     -webkit-transform: scale(1.1); /* Safari 3-8 */
     transform: scale(1.1); 
   }
+
+/* ADICIONAR APENAS ESSES ROLÊS AQUI EM BAIXO SE SEU CSS FOR PESSOAL */
+  /* CENTRALIZANDO RADIO BUTTONS NAS LISTAS */
+
+  /* LISTA CLIENTE RADIOS */
+  .container-listaclientes, .container-listausuarios form{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    background-color: white;
+    width: auto;
+    border-radius: 20px;
+    padding: 10px;
+    
+}

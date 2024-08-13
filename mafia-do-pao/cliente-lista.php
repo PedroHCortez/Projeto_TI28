@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </head>
 <body>
 
-    <div class="container-listausuarios">
+    <div class="container-listaclientes">
         <!-- FAZER DEPOIS DO ROLÊ -->
         <form action="cliente-lista.php" method="post">
             <input type="radio" name="status" value="1" required onclick="submit()" <?= $status=='1' ? "checked": ""?>>ATIVOS

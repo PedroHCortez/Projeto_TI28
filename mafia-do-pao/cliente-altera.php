@@ -21,11 +21,12 @@ $retorno = mysqli_query($link, $sql);
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $id = $_POST['id'];
+    $cpf = $_POST['cpf'];
     $email = $_POST['txtemail'];
     $status = $_POST['status'];
 
     $sql = "UPDATE tb_clientes
-    SET cli_nome = '$nome', cli_email = '$email', cli_cel = '$telefone', cli_status = '$status'
+    SET cli_cpf = '$cpf', cli_nome = '$nome', cli_email = '$email', cli_cel = '$telefone', cli_status = '$status'
     WHERE cli_id = '$id'";
 
     mysqli_query($link, $sql);
@@ -50,6 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
         <form class="formulario" action="cliente-cadastro.php" method="post">
             <input type="hidden" name="id" value="<?=$id?>">
+            <label>CPF</label>
+            <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" oninput="formatarCPF(this)" maxlength="15">
+            <br>
             <label>NOME</label>
             <input type="text" name="txtnome" placeholder="Digite seu nome" value="<?=$nome?>" required>
             <br>
