@@ -18,7 +18,7 @@ body{
     padding: 30px 3% 30px 30px;
     width: 300px;
     height: 300px;
-    background-color: #59416d;
+    background-color: #730202;
     border-radius: 20px;
     color: aliceblue;
     font-size: 22px;
@@ -48,6 +48,7 @@ body{
     height: 100px;
 }
 
+
 /* CSS DO HOME */
 .topo{
     display: flex;
@@ -61,7 +62,7 @@ body{
 
 .topo label{
     margin-top: 8px;
-    font-size: 30px;
+    font-size: 22px;
     color: #ffffff;
 }
 
@@ -128,7 +129,7 @@ body{
 
 
 /* AJUSTANDO TABELAS */
-.container-listausuarios, .container-listaclientes{
+.container-listausuarios, .container-listacliente,  .container-listaproduto {
     display: flex;
     flex-flow: column;
     align-content: center;
@@ -144,7 +145,7 @@ body{
     padding: 20px;
     border-radius: 10px;
     border-collapse: collapse;
-    width: auto;
+    width: auto; /*SUGESTÃO MATHEUS*/
     height: auto;
     
 }
@@ -165,11 +166,11 @@ td, tr, th{
     transform: scale(1.1); 
   }
 
-/* ADICIONAR APENAS ESSES ROLÊS AQUI EM BAIXO SE SEU CSS FOR PESSOAL */
+  /* ADICIONAR APENAS ESSES ROLÊS AQUI EM BAIXO SE SEU CSS FOR PESSOAL */
   /* CENTRALIZANDO RADIO BUTTONS NAS LISTAS */
 
   /* LISTA CLIENTE RADIOS */
-  .container-listaclientes, .container-listausuarios form{
+.container-listacliente, .container-listausuarios,  form{
     margin-top: 5px;
     display: flex;
     justify-content: center;
@@ -179,4 +180,9 @@ td, tr, th{
     border-radius: 20px;
     padding: 10px;
     
+}
+
+.container-listaproduto img{
+    border-radius: 10px;
+
 }

@@ -22,9 +22,14 @@ $status = '1';
 <body>
 
     <div class="container-listausuarios">
-        <!-- FAZER DEPOIS DO ROLÊ -->
-        <form>
-
+        <!-- LISTAR ATIVOS E INATIVOS -->
+        <form action="usuario-lista.php" method="post">
+                <input type="radio" name="status" value="1" required onclick="submit()"
+                <?= $status=='1' ? "checked":""?>>ATIVOS
+                <br>
+                <input type="radio" name="status" value="0" required onclick="submit()"
+                <?= $status=='0' ? "checked":""?>>INATIVOS
+                <br>
         </form>
         <!-- LISTAR A TABELA DE USUARIOS -->
         <table class="lista">

@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <label>EMAIL</label>
             <input type="email" name="txtemail" placeholder="Digite seu email" required>
             <br>
-            <input type="submit" value="CONFIRMAR">
+            <input type="submit" value="CRIAR">
         </form>
     </div>
 
