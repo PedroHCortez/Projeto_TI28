@@ -17,8 +17,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     $contagem = mysqli_fetch_array($retorno) [0];
 
     // VERIFICA SE NATAN EXISTE
-    if($contagem == 1)
-    {
+    if($contagem == 1){
         $sql = "SELECT usu_id, usu_login FROM tb_usuarios
         WHERE usu_login = '$login'AND usu_senha = '$senha'";
         $retorno = mysqli_query($link, $sql);
@@ -29,8 +28,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
         }
         echo"<script>window.location.href='backoffice.php';</script>";
     }
-    else
-    {
+    else{
         echo"<script>window.alert('USUARIO OU SENHA INCORRETOS');</script>";
     }
 
@@ -43,14 +41,15 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://fonts.cdnfonts.com/css/curely" rel="stylesheet">
                 
     <title>LOGIN USUARIO</title>
 </head>
-
 <body>
     <div class="container-global">
     
-        <form class="formulario" action="login.php" method="post">
+
+    <form class="formulario" action="login.php" method="post">
         <img src="img/logo.jfif" width="50" height="50">
                 <label>LOGIN</label>
                 <input type="text" name="txtlogin" placeholder="Digite seu login" required>
@@ -61,6 +60,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
                 <br>
                 <input type="submit" value="ACESSAR">
         </form>
+
     </div>
     
 </body>

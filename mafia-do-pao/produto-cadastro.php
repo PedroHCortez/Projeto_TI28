@@ -29,61 +29,59 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' ){
         tb_produtos(pro_nome, pro_quantidade, pro_unidade, pro_preco, pro_status, pro_imagem)
         VALUES ('$nomeproduto', $quantidade, '$unidade', $preco, '1', '$imagem_base64')";
         // echo $imagem_base64;
-        $retorno = mysqli_query($link, $sql);
+        $retorno = mysqli_query($link, $sql); #CRÉDITOS PARA RAFAEL BARBOSA GÊNIO E HUMILDE
 
         echo"<script>window.alert('PRODUTO CADASTRADO');</script>";
         echo"<script>window.location.href='produto-lista.php';</script>";
     }
     else{
-        echo"<script>window.alert('PRODUTO JÁ EXISTENTE!');</script>";
+        echo"<script>window.alert('PRODUTO JÁ EXISTENTE MEU BOM!!');</script>";
     }
 
-y
+
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
- 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
-    <title>CADASTRO DE PRODUTOS</title>
- 
+    <title>CADASTRA PRODUTOS</title>
 </head>
- 
 <body>
     <div class="container-global">
         <form class="formulario" action="produto-cadastro.php" method="post" enctype="multipart/form-data">
             <label>NOME PRODUTO</label>
             <input type="text" name="txtnome" placeholder="DIGITE NOME PRODUTO" required>
             <br>
+            
             <label>QUANTIDADE</label>
-            <input type="decimal" name="txtqtd" placeholder="DIGITE QUANTIDADE" required>
+            <input type="number" name="txtqtd" placeholder="DIGITE QUANTIDADE" required>
             <br>
- 
+
             <label>UNIDADE</label>
-            <select name="txtunidade">
+            <select name='txtunidade'>
                 <option value="kg">KG</option>
-                <option value="gr">G</option>
+                <option value="g">G</option>
                 <option value="un">UN</option>
                 <option value="lt">LT</option>
             </select>
             <br>
- 
+
             <label>PREÇO</label>
-            <input type="decimal" name="txtpreco" placeholder="DIGITE O PREÇO" required>
+            <input type="decimal" name="txtpreco" placeholder="DIGITE PREÇO" required>
             <br>
             <label>IMAGEM</label>
-            <img src="data:image/jpeg;base64" alt="" srcset="">
-            <input type="file" name="imagem" id="imagem">
-            
+            <input type="file" name='imagem' id='imagem'>
+            <br>
             <br>
             <input type="submit" value="CADASTRAR PRODUTO">
-        </form> 
+        </form>
+
     </div>
- 
+    
 </body>
 </html>

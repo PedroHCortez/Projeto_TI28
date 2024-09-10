@@ -17,15 +17,15 @@ while ($tbl = mysqli_fetch_array($retorno)){
 }
 
 // APERTAR BOTÃO DE ALTERAR
-if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $id = $_POST['id'];
     $nomeproduto = $_POST['txtnome'];
     $quantidade = $_POST['txtqtd'];
     $unidade = $_POST['txtunidade'];
     $preco = $_POST['txtpreco'];
-    $status = $_POST['txtstatus'];
-    $imagem = $_POST['txtimagem'];
+    $status = $_POST['status'];
+    $imagem = $_POST['imagem'];
+
 
     // AJUSTANDO IMAGEM PARA O BANCO
     if(isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK){
@@ -35,25 +35,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $imagem_base64 = base64_encode($imagem);
     };
 
-    // VERIFICAR SE A IMAGEM QUE ESTÁ CHEGANDO É IGUAL A QUE SERÁ GRAVADA
-    if($imagem == $imagem_base64)
-    {
-        $sql = "UPDATE tb_produtos SET pro_nome = '$nomeproduto', pro_quantidade = '$quantidade',
-        pro_unidade = '$unidade', pro_preco = '$preco', pro_status= '$status'";
+    // VERIFICAR SE A IMAGEM QUE ESTÁ CHEGANDO É IGUAL QUE SERÁ GRAVADA
+    if($imagem_atual == $imagem_base64){
+        $sql = "UPDATE tb_produtos SET pro_nome = '$nomeproduto', pro_quantidade = $quantidade, 
+        pro_unidade = '$unidade', pro_preco = $preco, pro_status = '$status'";
         mysqli_query($link, $sql);
-        
-        echo"<script>window.alert ('PRODUTO ALTERADO!');</script>";
-        echo"<script>window.location.href='produto-lista.php';</script";
+
+        echo"<script>window.alert('PRODUTO ALTERADO');</script>";
+        echo"<script>window.location.href='produto-lista.php';</script>";
     }
-    else
-    {
-        $sql = "UPDATE tb_produtos SET pro_nome = '$nomeproduto', pro_quantidade = '$quantidade',
-        pro_unidade = '$unidade', pro_preco = '$preco', pro_status= '$status'
+    else{
+        $sql = "UPDATE tb_produtos SET pro_nome = '$nomeproduto', pro_quantidade = $quantidade, 
+        pro_unidade = '$unidade', pro_preco = $preco, pro_status = '$status',
         pro_imagem = '$imagem_base64'";
         mysqli_query($link, $sql);
-        
-        echo"<script>window.alert ('PRODUTO ALTERADO!');</script>";
-        echo"<script>window.location.href='produto-lista.php';</script";
+
+        echo"<script>window.alert('PRODUTO ALTERADO');</script>";
+        echo"<script>window.location.href='produto-lista.php';</script>";
     }
 }
 
@@ -87,7 +85,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
             <label>UNIDADE</label>
             <select name='txtunidade'>
-                <option value=""><?= strtoupper($unidade)?></option>
+                <option value="<?=$unidade?>"><?= strtoupper($unidade)?></option>
                 <option value="kg">KG</option>
                 <option value="g">G</option>
                 <option value="un">UN</option>

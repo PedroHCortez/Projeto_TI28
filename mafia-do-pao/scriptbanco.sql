@@ -43,7 +43,7 @@ CREATE TABLE tb_ingredientes(
 CREATE TABLE tb_item_venda(
     iv_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     iv_valortotal DECIMAL(10,2) NOT NULL,
-    iv_quantidade DECIMAL(10,2) NOT NULL,
+    iv_quantidade DECIMAL (10,2) NOT NULL,
     iv_cod_iv VARCHAR(100) NOT NULL,
     fk_cli_id INT NOT NULL,
     fk_pro_id INT NOT NULL
@@ -58,12 +58,10 @@ CREATE TABLE tb_venda(
     fk_usu_id INT NOT NULL
 );
 
+
 ALTER TABLE tb_receitas ADD CONSTRAINT rec_pro_id FOREIGN KEY (fk_pro_id) REFERENCES tb_produtos(pro_id);
 ALTER TABLE tb_item_venda ADD CONSTRAINT iv_pro_id FOREIGN KEY (fk_pro_id) REFERENCES tb_produtos(pro_id);
 ALTER TABLE tb_item_venda ADD CONSTRAINT iv_cli_id FOREIGN KEY (fk_cli_id) REFERENCES tb_clientes(cli_id);
 ALTER TABLE tb_venda ADD CONSTRAINT ven_cli_id FOREIGN KEY (fk_cli_id) REFERENCES tb_clientes(cli_id);
 ALTER TABLE tb_venda ADD CONSTRAINT ven_usu_id FOREIGN KEY (fk_usu_id) REFERENCES tb_usuarios(usu_id);
 
--- INSERT INTO tb_usuarios (usu_login, usu_senha, usu_email, usu_status)
--- VALUES
--- ("administrador", "123", "admin@admin.com", "1");

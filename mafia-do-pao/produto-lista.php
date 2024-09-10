@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <td><?=$tbl[3]?></td> <!-- COLETA A UNIDADE -->
                     <td><?=$tbl[4]?></td> <!-- COLETA O PREÇO -->
                     <td><?=$tbl[5] == '1'?"ATIVO":"INATIVO" ?></td> <!-- COLETA O STATUS DO PRODUTO-->
-                    <td><img src='data:image/jpeg;base64,<?= $tbl[6]?>' width="200" height="200"></td> <!-- COLETA A IMAGEM -->
+                    <td><img src='data:image/jpeg;base64,<?= $tbl[6]?>' width="200" height="200"></td> <!-- COLETA A IBAGEM -->
                     
                     <td><a href="produto-altera.php?id=<?=$tbl[0]?>">
                             <input type="button" value="ALTERAR">
