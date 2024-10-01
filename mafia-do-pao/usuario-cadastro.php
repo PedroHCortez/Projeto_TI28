@@ -7,6 +7,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $login = $_POST['txtlogin'];
     $senha = $_POST['txtsenha'];
     $email = $_POST['txtemail'];
+    $tempero = md5($login . rand()); //cria um valor random para a criptografia
+    $senha = md5($tempero . $senha); //criptografa a senha
 
     // VALIDA SE USUARIO A CADASTRAR EXISTE
     $sql = "SELECT COUNT(usu_id) FROM tb_usuarios

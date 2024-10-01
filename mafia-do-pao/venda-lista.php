@@ -151,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <td><?=$tbl[6]?></td> <!-- COLETA O CLIENTE -->
                 <td><?=$tbl[7]?></td> <!-- COLETA O USUARIO -->
 
-                <td><a href="venda-visualizar.php?id=<?=$tbl[3]?>">
+                <td><a href="vendas-visualizar.php?id=<?=$tbl[3]?>">
                         <input type="button" value="VISUALIZAR">
                     </a>
                 </td>
