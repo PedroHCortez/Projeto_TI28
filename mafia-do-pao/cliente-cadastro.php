@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 </div>
 
-<script src="scripts/script.js"></script>
+<script src="script/script.js"></script>
 
 </body>
 </html>
